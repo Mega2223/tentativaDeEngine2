@@ -9,6 +9,7 @@ import java.util.List;
 public class misc {
     //TODO divide this class into a package with categorized classes if it becomes too confusing to read
     public static BufferedImage renderBoard(board boardToRender) {
+        //TODO background image
         BufferedImage buff = new BufferedImage(boardToRender.sizeX, boardToRender.sizeY, BufferedImage.TYPE_INT_RGB);
         //Graphics buffGr = buff.getGraphics();
         for (int E = 0; E < boardToRender.getEntList().size(); E++) {
@@ -71,26 +72,5 @@ public class misc {
     //tbh they are supposed to implement the Ents in their own classes anyway
 
 
-    public static Ent updateEntity(Ent entity) {
-        /**updates an individual entity depending on its behavior, size and speed modifiers*/
-        //TODO speed and sizeSpeedModifiers
-        int limitX = main.Board.sizeX;
-        int limitY = main.Board.sizeY;
-        misc.debug(("atualizando entidade de nome \"" + entity.getName() + "\""), main.DEBUGMODE_EVERYTHING);
 
-        //the thing that moves the entity is going to be client side for a while considering that I want this thing to be as maleable as possible
-
-        if (entity.getXPos() >= limitX) {
-
-            entity.setCoords(new double[]{entity.getXPos() - limitX, entity.getYPos()});}
-
-        if (entity.getYPos() >= limitY) {
-
-                entity.setCoords(new double[]{entity.getXPos(), entity.getYPos() - limitY});
-        }
-
-
-
-        return entity;
-    }
 }

@@ -5,8 +5,7 @@ import Mega2223.engine2.util.Ent;
 import Mega2223.engine2.util.*;
 
 public class eventHandlers {
-    //TODO remove these
-    private static Ent ent = new Ent(new double[]{0,0});//TODO remove this
+    private static Ent ent = new Ent(new double[]{0,0});
     public static void onStart(){
         misc.debug("evento onStart inicializado" , main.DEBUGMODE_ONLY_PRIORITY);
         main.Board.boardWindow.setVisible(true);
