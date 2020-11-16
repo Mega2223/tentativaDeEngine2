@@ -13,7 +13,7 @@ Como a documentação ainda tá bem incompleta, eu vou dar uma resumida aqui
 
 Board - Uma variável que inclui uma Window e uma Java.util.list<Ent> (que é acessivel através dos voids setEntList, addToEntList, e getEntList).
   
-  .
+
 Ent - abreviatura pra entidade, ela guarda várias variáveis, a principal é uma double[] que representa suas coordenadas X e Y respectivamente.
 
 
