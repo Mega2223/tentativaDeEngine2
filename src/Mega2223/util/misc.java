@@ -24,7 +24,7 @@ public class misc {
             buff.getGraphics().drawOval(Xp - ((int)ent.getSize()/2), Yp -((int)ent.getSize()/2), (int)ent.getSize(), (int)ent.getSize());
             buff.getGraphics().fillOval(Xp - ((int)ent.getSize()/2), Yp -((int)ent.getSize()/2), (int)ent.getSize(), (int)ent.getSize());
 
-            //TODO render in loops properly
+            //TODO render in space loops properly
             //TO/DO fazer funcionar a função size (feito)
             //TO/DO btw usar circulos, não pixels (feito)
             buff.setRGB(Xp, Yp, ent.getColor().getRGB());
@@ -65,33 +65,20 @@ public class misc {
 
     public static List<Ent> newBoardEntList;
 
-    public static void updateBoard() {
-        newBoardEntList = main.Board.getEntList();
-        misc.debug("atualizando board", main.DEBUGMODE_ONLY_RELEVANT);
-        for (int f = 0; f < newBoardEntList.size(); f++) {
-            newBoardEntList.set(f, updateEntity(newBoardEntList.get(f)));
-        }
-        main.Board.setEntList(newBoardEntList);
-    }
+    //TO/DO remove this from the API because it prevents new behaviors from being added by the user side(done, its now in the Ent class as a @Deprecated void)
+    //or don't?
+    //maybe i could just make these ones default behaviors with an doAction() void, and the users can make their own behaviors
+    //tbh they are supposed to implement the Ents in their own classes anyway
+
 
     public static Ent updateEntity(Ent entity) {
+        /**updates an individual entity depending on its behavior, size and speed modifiers*/
+        //TODO speed and sizeSpeedModifiers
         int limitX = main.Board.sizeX;
         int limitY = main.Board.sizeY;
         misc.debug(("atualizando entidade de nome \"" + entity.getName() + "\""), main.DEBUGMODE_EVERYTHING);
 
-        switch (entity.getType()) {
-            case Ent.RANDOM:
-                misc.debug("Entidade tipo random, vou colocar 1 de coordenada pq vc tava com preguiça de fazer  a porra de um random direito", main.DEBUGMODE_EVERYTHING);
-                misc.debug("As coordenadas X são " + entity.getXPos() + ". E as Y são " + entity.getYPos(), main.DEBUGMODE_EVERYTHING);
-                //TODO proper behavior
-                entity.walkY(1);
-                entity.walkX(1);
-                misc.debug("Agora coordenadas X são " + entity.getXPos() + ". E as Y agora são " + entity.getYPos(), main.DEBUGMODE_EVERYTHING);
-                break;
-
-        }
-
-
+        //the thing that moves the entity is going to be client side for a while considering that I want this thing to be as maleable as possible
 
         if (entity.getXPos() >= limitX) {
 

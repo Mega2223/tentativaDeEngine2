@@ -9,6 +9,7 @@ import Mega2223.main.*;
 import Mega2223.util.*;
 
 public class eventHandlers {
+    //TODO remove these
     private static Ent ent = new Ent(new double[]{0,0});//TODO remove this
     public static void onStart(){
         misc.debug("evento onStart inicializado" , main.DEBUGMODE_ONLY_PRIORITY);
@@ -18,17 +19,16 @@ public class eventHandlers {
         main.Board.sizeY = 1000;
 
         //TODO remove isso e faz um frontend decente
-
-        ent.setName("fodase");
         ent.setSize(1);
         main.Board.addToEntList(ent);
 
     }
 
     public static void onUpdate(){
+
         main.Turn ++;
         misc.debug("Turno " + main.Turn + " completo, com um número de " + main.Board.getEntList().size() +" entidades no board", main.DEBUGMODE_ONLY_PRIORITY);
-        misc.updateBoard();
+        //main.Board.update();
         main.Board.boardWindow.updateRender();
 
         //TODO remove this and make a proper frontend
