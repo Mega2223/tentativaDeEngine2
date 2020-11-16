@@ -1,3 +1,2 @@
 Manifest-Version: 1.0
-Main-Class: Mega2223.engine2.exampleUsage.run
 
