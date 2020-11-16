@@ -6,6 +6,8 @@ ele não tem licença, só to fazendo ele pra tirar meu tédio, fica a vontade p
 # setup
 Pega o JAR na pasta src e coloca na sua classpath :)
 
+(vc pode copiar esse projeto pra sua IDE também, aí vai de preferência pessoal)
+
 # o que tem aqui?
 Como a documentação ainda tá bem incompleta, eu vou dar uma resumida aqui
 
