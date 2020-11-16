@@ -1,13 +1,22 @@
 package Mega2223.engine2.util;
 
-import Mega2223.engine2.exampleUsage.main;
+
 
 import java.awt.*;
 import java.awt.image.*;
 import java.util.List;
 
 public class misc {
+
+
     //TODO divide this class into a package with categorized classes if it becomes too confusing to read
+
+    public static int debugModePriority = 3;
+    public static final int DEBUGMODE_EVERYTHING = 0;
+    public static final int DEBUGMODE_EVERYTHING_BUT_ENTITIES = 1;
+    public static final int DEBUGMODE_ONLY_RELEVANT = 2;
+    public static final int DEBUGMODE_ONLY_PRIORITY = 3;
+
     public static BufferedImage renderBoard(board boardToRender) {
         //TODO background image
         BufferedImage buff = new BufferedImage(boardToRender.sizeX, boardToRender.sizeY, BufferedImage.TYPE_INT_RGB);
@@ -58,7 +67,7 @@ public class misc {
     }
 
     public static void debug(String debugWhat, int levelOfPriority) {
-        if (main.debugModePriority <= levelOfPriority) {
+        if (misc.debugModePriority <= levelOfPriority) {
             System.out.println(debugWhat);
         }
 

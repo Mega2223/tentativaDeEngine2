@@ -1,6 +1,6 @@
 package Mega2223.engine2.util;
 
-import Mega2223.engine2.exampleUsage.main;
+
 
 import javax.swing.*;
 import java.awt.image.BufferedImage;
@@ -19,15 +19,15 @@ public class Window extends JFrame {
         ImageIcon ImgI = new ImageIcon(render);
         label = new JLabel(ImgI);
         add(label);
-        misc.debug("uma instância ou algum método da classe Window foi inicializado", main.DEBUGMODE_ONLY_RELEVANT);
+        misc.debug("uma instância ou algum método da classe Window foi inicializado", misc.DEBUGMODE_ONLY_RELEVANT);
         //TODO ver pq toda hora essa classe é inicializada com o void updateRender
     }
 
 
 
-    public static void updateRender() {
-        render = misc.renderBoard(main.Board);
-        misc.debug("atualizando render", main.DEBUGMODE_ONLY_RELEVANT);
+    public static void updateRender(board Board) {
+        render = misc.renderBoard(Board);
+        misc.debug("atualizando render", misc.DEBUGMODE_ONLY_RELEVANT);
         label.setIcon(new ImageIcon(render));
     }
 }
