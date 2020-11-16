@@ -5,8 +5,10 @@ import java.util.List;
 
 @SuppressWarnings("unused")
 public class main {
+    //TODO remove run methods to make this thing implementable in other projects
+    //btw, TODO javadoc
     public static Boolean debugMode = true;
-    public static int debugModePriority = 0;
+    public static int debugModePriority = 3;
     public static board Board = new board();
     public static int Turn = 0;
 
