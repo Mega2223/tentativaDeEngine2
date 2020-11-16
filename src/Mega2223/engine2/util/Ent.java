@@ -1,8 +1,7 @@
-package Mega2223.util;
+package Mega2223.engine2.util;
 
 
 
-import javax.swing.*;
 import java.awt.*;
 @SuppressWarnings("unused")
 public class Ent {

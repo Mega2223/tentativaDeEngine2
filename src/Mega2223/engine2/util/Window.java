@@ -1,9 +1,8 @@
-package Mega2223.util;
+package Mega2223.engine2.util;
 
-import Mega2223.main.main;
+import Mega2223.engine2.exampleUsage.main;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 
 

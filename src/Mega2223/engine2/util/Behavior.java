@@ -1,4 +1,4 @@
-package Mega2223.util;
+package Mega2223.engine2.util;
 
 @Deprecated
 public class Behavior extends Thread {

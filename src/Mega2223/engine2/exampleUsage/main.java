@@ -1,7 +1,5 @@
-package Mega2223.main;
-import Mega2223.util.*;
-
-import java.util.List;
+package Mega2223.engine2.exampleUsage;
+import Mega2223.engine2.util.*;
 
 @SuppressWarnings("unused")
 //this is no use, I'll try to remove this as fast as I can

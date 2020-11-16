@@ -1,7 +1,7 @@
-package Mega2223.main;
+package Mega2223.engine2.exampleUsage;
 
 public class run {
-    //TODO remove this
+
     public static void main(String[] args) throws InterruptedException {
 
         eventHandlers.onStart();

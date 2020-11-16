@@ -1,12 +1,8 @@
-package Mega2223.main;
+package Mega2223.engine2.exampleUsage;
 
-import Mega2223.util.Ent;
-import Mega2223.util.Window;
+import Mega2223.engine2.util.Ent;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import Mega2223.main.*;
-import Mega2223.util.*;
+import Mega2223.engine2.util.*;
 
 public class eventHandlers {
     //TODO remove these

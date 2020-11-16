@@ -1,6 +1,4 @@
-package Mega2223.util;
-
-import Mega2223.main.main;
+package Mega2223.engine2.util;
 
 import java.util.ArrayList;
 import java.util.List;
