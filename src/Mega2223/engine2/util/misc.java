@@ -31,12 +31,25 @@ public class misc {
 
             //ok for not it looks ok
             //TO/DO fill the circles(done)
+            //TODO optmize loops
             Graphics h = buff.getGraphics();
             h.setColor(ent.getColor());
             h.drawOval(Xp - ((int)ent.getSize()/2), Yp -((int)ent.getSize()/2), (int)ent.getSize(), (int)ent.getSize());
             h.fillOval(Xp - ((int)ent.getSize()/2), Yp -((int)ent.getSize()/2), (int)ent.getSize(), (int)ent.getSize());
 
-            //TODO render in space loops properly
+            //h.setColor(Color.red);
+
+            h.drawOval(Xp - ((int)ent.getSize()/2) - boardToRender.sizeX, Yp -((int)ent.getSize()/2), (int)ent.getSize(), (int)ent.getSize());
+            h.drawOval(Xp - ((int)ent.getSize()/2) + boardToRender.sizeX, Yp -((int)ent.getSize()/2), (int)ent.getSize(), (int)ent.getSize());
+            h.drawOval(Xp - ((int)ent.getSize()/2), Yp -((int)ent.getSize()/2)  + boardToRender.sizeY, (int)ent.getSize(), (int)ent.getSize());
+            h.drawOval(Xp - ((int)ent.getSize()/2), Yp -((int)ent.getSize()/2)  - boardToRender.sizeY, (int)ent.getSize(), (int)ent.getSize());
+
+            h.fillOval(Xp - ((int)ent.getSize()/2) - boardToRender.sizeX, Yp -((int)ent.getSize()/2), (int)ent.getSize(), (int)ent.getSize());
+            h.fillOval(Xp - ((int)ent.getSize()/2) + boardToRender.sizeX, Yp -((int)ent.getSize()/2), (int)ent.getSize(), (int)ent.getSize());
+            h.fillOval(Xp - ((int)ent.getSize()/2), Yp -((int)ent.getSize()/2)  + boardToRender.sizeY, (int)ent.getSize(), (int)ent.getSize());
+            h.fillOval(Xp - ((int)ent.getSize()/2), Yp -((int)ent.getSize()/2)  - boardToRender.sizeY, (int)ent.getSize(), (int)ent.getSize());
+
+            //TO/DO render in space loops properly(feito)
             //TO/DO fazer funcionar a função size (feito)
             //TO/DO btw usar circulos, não pixels (feito)
 

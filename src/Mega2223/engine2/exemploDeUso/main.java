@@ -9,7 +9,7 @@ public class main {
 
     public static simBoard Board = new simBoard();
     public static int Turn = 0; //turn count
-    public static double turnRate = 0.5; //turns per second
+    public static double turnRate = 0.1; //seconds per turn
 
 
 
