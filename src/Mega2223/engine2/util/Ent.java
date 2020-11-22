@@ -21,9 +21,6 @@ public class Ent {
     public Ent(double[] newCoords, Color cor, int type, double Speed){typ = type; color = cor; coords = new double[] {newCoords[0], newCoords[1]}; speed = Speed;}
 
     public void setCoords(double[] newCoords){/**Sets the coordinates of the entity*/coords = newCoords;}
-    public void walk(double[] howManyCoords){/**Adds to the coordinates of the entity*/coords = howManyCoords;} //FIXME como caralhos eu pensei nisso
-    public void walkX(double howManyXCoords){/**Adds to the X coordinates of the entity*/coords = new double[]{coords[0] + howManyXCoords, coords[1]};}
-    public void walkY(double howManyYCoords){/**Adds to the Y coordinates of the entity*/coords = new double[] {coords[0],  howManyYCoords + coords[1]};}
     public void setColor(Color newColor){/**Its no use if you don't use the Color function*/color = newColor;}
     public void setSize(double newSize){/**Its no use if you don't use the size function*/size = newSize;}
     public void setType(int newType){typ = newType;/**Sets a int set for diferentiating if you want a diferentiatior, does nothing on its own*/}
@@ -39,4 +36,19 @@ public class Ent {
     public int getType(){/**No use if you don't use the Type function*/return typ;}
     public double getSizeSpeedModifier(){/**No use if you don't use the SizeSpeedModifier function*/return sizeSpeedModifier;}
 
+    @Deprecated
+    public void walk(double[] howManyCoords){/**Adds to the coordinates of the entity accordingly to the modifiers*/coords = howManyCoords;} //FIXME como caralhos eu pensei nisso
+
+    public void walkX(double howManyXSteps){/**Adds to the X coordinates of the entity accordingly to the modifiers*/
+    double howMuch = Math.pow(sizeSpeedModifier, size); howMuch = howMuch * howManyXSteps;
+    coords = new double[]
+            {coords[0] + howMuch, coords[1]};}
+
+    public void walkY(double howManyYSteps){/**Adds to the Y coordinates of the entity accordingly to the modifiers*/
+    double howMuch = Math.pow(sizeSpeedModifier, size); howMuch = howMuch * howManyYSteps;
+    coords = new double[]
+            {coords[0], coords[1] + howMuch};}
+
+    public void addX (double howManyXCoords){coords = new double[]{coords[0] + howManyXCoords,coords[1]};}
+    public void addY (double howManyYCoords){coords = new double[]{coords[0],coords[1] + howManyYCoords};}
 }

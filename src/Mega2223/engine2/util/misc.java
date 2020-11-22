@@ -31,21 +31,42 @@ public class misc {
 
             //ok for not it looks ok
             //TO/DO fill the circles(done)
-            buff.getGraphics().drawOval(Xp - ((int)ent.getSize()/2), Yp -((int)ent.getSize()/2), (int)ent.getSize(), (int)ent.getSize());
-            buff.getGraphics().fillOval(Xp - ((int)ent.getSize()/2), Yp -((int)ent.getSize()/2), (int)ent.getSize(), (int)ent.getSize());
+            Graphics h = buff.getGraphics();
+            h.setColor(ent.getColor());
+            h.drawOval(Xp - ((int)ent.getSize()/2), Yp -((int)ent.getSize()/2), (int)ent.getSize(), (int)ent.getSize());
+            h.fillOval(Xp - ((int)ent.getSize()/2), Yp -((int)ent.getSize()/2), (int)ent.getSize(), (int)ent.getSize());
 
             //TODO render in space loops properly
             //TO/DO fazer funcionar a função size (feito)
             //TO/DO btw usar circulos, não pixels (feito)
-            buff.setRGB(Xp, Yp, ent.getColor().getRGB());
+
+            buff.setRGB(Xp, Yp, Color.white.getRGB());
             //btw dont place any code after the bufferedimage conversion
             buff = toBufferedImage(buff.getScaledInstance(boardToRender.boardWindow.getWidth(), boardToRender.boardWindow.getHeight(),BufferedImage.SCALE_DEFAULT));
-            //why is it  a sun.awt.image.ToolkitImage and not a java.awt.bufferedImage?
-
+            h.dispose(); //I am the law
         }
 
         return buff;
     }
+    public static final int Norte = 0;  //todo english
+    public static final int Sul = 1;    //i forgot wich direction is west in english help
+    public static final int Leste = 2;
+    public static final int Oeste = 3;
+
+    public static int getClosestBorder(board Board, Ent entity){
+        //maybe i've just made these for nothing
+        //just maybe
+
+        int Vert = Norte; int Horiznt = Oeste;
+        double VertDis = entity.getYPos();
+        double HorDis = entity.getXPos();
+        if (entity.getXPos() > Board.sizeX) //if its on the right
+        {Horiznt = Leste;HorDis = Board.sizeX - entity.getYPos();}
+        if (entity.getYPos() > Board.sizeY)
+        {Vert = Sul;VertDis = Board.sizeY - entity.getYPos();}
+        if (VertDis > HorDis){return Vert;} return Horiznt;
+     }
+
     //proudly copypasted from StackOverFlow
     public static BufferedImage toBufferedImage(Image img)
     {
