@@ -5,7 +5,7 @@ package Mega2223.engine2.util;
 import java.awt.*;
 @SuppressWarnings("unused")
 public class Ent {
-    //TODO remove speed, sizeSpeedModifier and size function and put them on client side
+    //TODO remove speed, sizeSpeedModifier and size function and put them on FrontEnd side
     //or don't, I'm not your dad
     private double[] coords = {1,1};
     private Color color = Color.red;
